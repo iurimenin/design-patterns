@@ -1,5 +1,8 @@
 package dao;
 
+import dao.estadoConta.EstadoDaConta;
+import dao.estadoConta.Positivo;
+
 import java.util.Calendar;
 
 /**
@@ -13,14 +16,20 @@ public class Conta {
     private Integer agencia;
     private double saldo;
     private Calendar dataAbertura;
+    private EstadoDaConta estado;
 
     public Conta(String titular, double saldo) {
         this.titular = titular;
         this.saldo = saldo;
+        estado = new Positivo();
+    }
+
+    public void saca(double valor) {
+        estado.saca(this, valor);
     }
 
     public void deposita(double valor) {
-        this.saldo += valor;
+        estado.deposita(this, valor);
     }
 
     public String getTitular() {
@@ -69,5 +78,13 @@ public class Conta {
 
     public void setDataAbertura(Calendar dataAbertura) {
         this.dataAbertura = dataAbertura;
+    }
+
+    public EstadoDaConta getEstado() {
+        return estado;
+    }
+
+    public void setEstado(EstadoDaConta estado) {
+        this.estado = estado;
     }
 }
