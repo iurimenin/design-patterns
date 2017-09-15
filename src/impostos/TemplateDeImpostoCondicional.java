@@ -5,7 +5,7 @@ import dao.Orcamento;
 /**
  * Created by Iuri Menin on 15/09/17.
  */
-public abstract class TemplateDeImpostoCondicional implements Imposto {
+public abstract class TemplateDeImpostoCondicional extends Imposto {
 
     public final double calcula(Orcamento orcamento) {
 
