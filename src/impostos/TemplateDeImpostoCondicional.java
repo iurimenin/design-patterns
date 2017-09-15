@@ -7,6 +7,12 @@ import dao.Orcamento;
  */
 public abstract class TemplateDeImpostoCondicional extends Imposto {
 
+    public TemplateDeImpostoCondicional() { }
+
+    public TemplateDeImpostoCondicional(Imposto outro) {
+        super(outro);
+    }
+
     public final double calcula(Orcamento orcamento) {
 
         if(deveUsarMaximaTaxacao(orcamento)) {

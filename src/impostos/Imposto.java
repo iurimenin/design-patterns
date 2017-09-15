@@ -17,9 +17,7 @@ public abstract class Imposto {
 
     public abstract double calcula(Orcamento orcamento);
 
-    protected double calculoDoOutroImposto(Orcamento orcamento) {
-
-        if (outroImposto == null) return 0;
-        return outroImposto.calcula(orcamento);
+    protected double calculaOutroImposto(Orcamento orcamento) {
+        return (outroImposto == null? 0 : outroImposto.calcula(orcamento));
     }
 }

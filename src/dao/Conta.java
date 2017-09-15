@@ -1,5 +1,7 @@
 package dao;
 
+import java.util.Calendar;
+
 /**
  * Created by Iuri Menin on 14/09/17.
  */
@@ -10,6 +12,7 @@ public class Conta {
     private Integer numero;
     private Integer agencia;
     private double saldo;
+    private Calendar dataAbertura;
 
     public Conta(String titular, double saldo) {
         this.titular = titular;
@@ -58,5 +61,13 @@ public class Conta {
 
     public void setSaldo(double saldo) {
         this.saldo = saldo;
+    }
+
+    public Calendar getDataAbertura() {
+        return dataAbertura;
+    }
+
+    public void setDataAbertura(Calendar dataAbertura) {
+        this.dataAbertura = dataAbertura;
     }
 }

@@ -7,6 +7,12 @@ import dao.Orcamento;
  */
 public class ICPP extends TemplateDeImpostoCondicional {
 
+    public ICPP () {}
+
+    public ICPP(Imposto outro) {
+        super(outro);
+    }
+
     @Override
     protected double minimaTaxacao(Orcamento orcamento) {
         return orcamento.getValor() * 0.5;

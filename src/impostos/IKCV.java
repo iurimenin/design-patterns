@@ -8,6 +8,12 @@ import dao.Orcamento;
  */
 public class IKCV extends TemplateDeImpostoCondicional {
 
+    public IKCV () {}
+
+    public IKCV(Imposto outro) {
+        super(outro);
+    }
+
     @Override
     protected double minimaTaxacao(Orcamento orcamento) {
         return orcamento.getValor() * 0.06;
